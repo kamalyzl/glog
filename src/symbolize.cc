@@ -845,6 +845,7 @@ static ATTRIBUTE_NOINLINE bool SymbolizeAndDemangle(void *pc, char *out,
   if (dladdr(pc, &info)) {
     if ((int)strlen(info.dli_sname) < out_size) {
       strlcpy(out, info.dli_sname);
+      //line change for kamaly
       // Symbolization succeeded.  Now we try to demangle the symbol.
       DemangleInplace(out, out_size);
       return true;
